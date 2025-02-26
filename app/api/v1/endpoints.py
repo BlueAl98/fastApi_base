@@ -1,10 +1,10 @@
 from fastapi import APIRouter, Depends
 from sqlalchemy.orm import Session
 from app.core.db.session import get_db
+from app.schemas.topic import TopicResponse, TopicCreate
 from app.services.user_service import add_user, list_users
-from app.services.product_service import list_products, add_product
 from app.schemas.user import UserCreate, UserOut
-from app.schemas.product import ProductCreate, ProductOut
+from app.services.topic_service import list_topics, add_topic
 from typing import List
 
 router = APIRouter()
@@ -17,10 +17,14 @@ def create_user_endpoint(user: UserCreate, db: Session = Depends(get_db)):
 def get_users_endpoint(db: Session = Depends(get_db)):
     return list_users(db)
 
-@router.post("/products/", response_model=ProductOut)
-def create_product(product: ProductCreate, db: Session = Depends(get_db)):
-    return add_product(db, product)
+@router.post("/topic/", response_model=TopicResponse)
+def createTopic_endpoint(topic: TopicCreate, db: Session = Depends(get_db)):
+    return add_topic(db, topic)
 
-@router.get("/products/", response_model=List[ProductOut])
-def get_products(db: Session = Depends(get_db)):
-    return list_products(db)
+
+@router.get("/topic/", response_model=List[TopicResponse])
+def getTopics_endpoint(db: Session = Depends(get_db)):
+    return list_topics(db)
+
+
+

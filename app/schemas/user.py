@@ -10,4 +10,4 @@ class UserOut(UserCreate):
     id: int
 
     class Config:
-        orm_mode = True  # Esto le permite a Pydantic usar datos del ORM (SQLAlchemy por ejemplo)
+        from_attributes = True
