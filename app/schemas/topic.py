@@ -11,7 +11,7 @@ class TopicCreate(TopicBase):
 
 class TopicResponse(TopicBase):
     id: int
-    #topicsDetails: List[TopicDetailResponse] = []
+    topicsDetails: List[TopicDetailResponse] = []
 
     class Config:
         from_attributes = True

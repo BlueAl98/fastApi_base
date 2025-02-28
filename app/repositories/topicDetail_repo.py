@@ -4,7 +4,7 @@ from app.models.topicDetail import TopicDetail
 from app.schemas.topic_detail import TopicDetailCreate
 
 def CreateTopicDetail(db:Session, topic: TopicDetailCreate):
-    db_topic = TopicDetail(name=topic.name)
+    db_topic = TopicDetail(name=topic.name, topicId=topic.topicId)
     db.add(db_topic)
     db.commit()
     db.refresh(db_topic)

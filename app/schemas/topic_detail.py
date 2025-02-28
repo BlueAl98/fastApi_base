@@ -3,13 +3,17 @@ from typing import List, Optional
 
 
 class TopicDetailBase(BaseModel):
-    name:str
+    name: str
+    topicId: int
 
 class TopicDetailCreate(TopicDetailBase):
-     topicId: int
+    pass
+    # topicId: int
 
 class TopicDetailResponse(TopicDetailBase):
     id: int
-    topicId: int
+    name: str
+    #topicId: int
+
     class Config:
         from_attributes = True
