@@ -1,6 +1,7 @@
 from urllib.request import Request
 from starlette.responses import JSONResponse
 
+#Middlewares here in functions
 
 async def app_id_middleware(request: Request, call_next):
     app_id = request.headers.get("appid")
