@@ -7,3 +7,4 @@ def add_user(db: Session, user: UserCreate):
 
 def list_users(db: Session):
     return get_users(db)
+

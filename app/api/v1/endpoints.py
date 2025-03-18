@@ -41,4 +41,3 @@ def createTopicDetail(topic: TopicDetailCreate, db: Session = Depends(get_db)):
 def get_topic_with_details(topic_id: int, db: Session = Depends(get_db)):
     return getITopicRelation(db, topic_id)
 
-

@@ -13,7 +13,6 @@ def getITopicRelation(db: Session, topic_id: int):
     myobj = {
         "topic": filterobj.name,
         "lista":filterobj.topicsDetail
-
     }
 
     return myobj
